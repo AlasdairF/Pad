@@ -1,0 +1,22 @@
+package pad
+
+func Bytes(input []byte, to int, padder byte) []byte {
+
+	l := len(input)
+	if l >= to {
+		return input
+	}
+	
+	b := make([]byte, to)
+	dif := to - l
+	var i, i2 int
+	for i=0; i<dif; i++ {
+		b[i] = padder
+	}
+	for ; i<to; i++ {
+		b[i] = input[i2]
+		i2++
+	}
+
+	return b
+}
