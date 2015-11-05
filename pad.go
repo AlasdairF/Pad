@@ -40,7 +40,7 @@ func StringBytes(input string, to int, padder byte) []byte {
 
 	l := len(input)
 	if l >= to {
-		return input
+		return []byte(input)
 	}
 	
 	b := make([]byte, to)
